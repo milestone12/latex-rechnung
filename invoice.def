@@ -300,7 +300,7 @@
 	\def\Factor			{Faktor}%
 	\def\Activity			{Bezeichnung}%
 	\def\Count			{Anzahl}%
-	\def\UnitRate			{Preis/Stunde}%
+	\def\UnitRate			{Preis/Einheit}%
 	\def\Fees			{Dienstleistungen}%
 	\def\VAT			{MWSt.}%
 	\def\Expenses			{Auslagen}%
