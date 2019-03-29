@@ -150,6 +150,7 @@
 \RequirePackage{longtable}
 \RequirePackage{calc}
 \usepackage{fp}
+\usepackage[autolanguage]{numprint}
 \input{invoice.def}
 %
 \newcommand{\InvoiceVersion}{0.9}%
@@ -815,7 +816,7 @@
 \newcommand{\Print@Value}[1]{%
 	\FPmul\r#1{0.01}%% <- Reduce to BaseCurrency
 	\FPtrunc\r\r{2}%% <- Truncate to two digits
-	\r%		% <- Output data!
+	\numprint{\r}%% <- Output data!
 }%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Message@Value}[1]{%
@@ -850,7 +851,7 @@
 	%
 	\gdef\Flag{3}%
 	%
-	#1			&	&#2	&#3 &
+	#1			&	&\numprint{#2}	&\numprint{#3} &
 %
 %   next is reversed to allow real arithmetic.
 %   intermediate results are stored in integer format,
