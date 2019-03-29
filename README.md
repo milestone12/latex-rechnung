@@ -4,6 +4,28 @@ Die Vorlage ist primär für die Rechnungslegung von Dienstleistungen gedacht.
 Sie enthält unter anderem eine Klausel für die Kleinunternehmerregelung gemäß
 §19 UStG.
 
+## PDF-Datei mit `make` erzeugen
+PDF-Datei `document.pdf` erzeugen:
+```bash
+make
+```
+
+Eigenen Dateinamen vergeben, z.B. `rechnung-01.pdf`:
+```bash
+make rechnung-01.pdf
+```
+
+### Verzeichnis aufräumen
+Nur temporäre Dateien:
+```bash
+make clean_tempfiles
+```
+
+Temporäre Dateien und PDF-Dokument:
+```bash
+make clean
+```
+
 ## Anpassung
 * `_main.tex`: Hauptdatei für die Erstellung der PDF-Datei mittels LaTeX oder
   XeLaTeX
