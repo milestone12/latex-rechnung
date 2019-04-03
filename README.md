@@ -4,6 +4,13 @@ Die Vorlage ist primär für die Rechnungslegung von Dienstleistungen gedacht.
 Sie enthält unter anderem eine Klausel für die Kleinunternehmerregelung gemäß
 §19 UStG.
 
+## Benötigte Pakete
+Dieser Abschnitt könnte noch unvollständig sein.
+
+### LaTeX-Pakete
+* ec
+* numprint
+
 ## PDF-Datei mit `make` erzeugen
 PDF-Datei `document.pdf` erzeugen:
 ```bash
