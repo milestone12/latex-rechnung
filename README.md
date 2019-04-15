@@ -3,12 +3,15 @@ Bei diesem Repository handelt es sich um eine LaTeX Rechnungsvorlage.
 Die Vorlage ist primär für die Rechnungslegung von Dienstleistungen gedacht.
 Sie enthält unter anderem eine Klausel für die Kleinunternehmerregelung gemäß
 §19 UStG.
+Diese Vorlage ist im Wesentlichen kompatibel zur Vermaßung des Geschäftsbriefes
+Form B nach DIN 5008.
 
 ## Benötigte Pakete
 Dieser Abschnitt könnte noch unvollständig sein.
 
 ### LaTeX-Pakete
 * ec
+* multirow
 * numprint
 
 ## PDF-Datei mit `make` erzeugen
@@ -46,3 +49,6 @@ make clean
 ## Modifikationen gegenüber Original
 * Automatische Verwendung des richtigen Dezimalzeichens abhängig von der Sprache des Dokuments, z.B. das Komma in Deutsch und der Dezimalpunkt in Englisch
 * In der deutschen Übersetzung wird _Unit Rate_ nun mit _Preis/Einheit_ übersetzt
+* Korrektur der vertikalen Positionen von Falzmarken und Adressfeld. Durch
+  Einsetzen des Logos innerhalb der `document`-Umgebung befanden sich alle
+  Elemente vormals ca. 15mm zu weit unten.
