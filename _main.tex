@@ -1,6 +1,8 @@
 % koma_env.tex
-\documentclass[a4paper]{scrlttr2}
+\documentclass[DIN, paper=a4, pagesize=auto, pagenumber=botcenter, fontsize=11pt]{scrlttr2}
 \usepackage[top=2cm, bottom=1cm, left=2cm, right=2cm]{geometry}
+\usepackage{tabularx}
+\usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{lmodern}
 \usepackage[utf8]{inputenc}
@@ -31,29 +33,26 @@
   \invoiceReference}
 }
 
-\setkomavar{firsthead}{\hfill
-   \parbox[t][\headheight][t]{6cm}{%
-   \footnotesize
-   \raggedright
-   \flushright
-   \color[gray]{.3}%
-	\begin{tabular}{rl}
-		 Anschrift & \usekomavar{fromname}\\
-		 & \senderStreet\\
-		 & \senderZIP  \ \senderCity \\
-		 \\
-		 %\Telefon \ Telefon:  \` \senderTelephone \\
-		 Mobil  & \usekomavar{frommobilephone} \\
-		 E-Mail  & \usekomavar{fromemail} \\
-		 Webseite & {\normalfont\ttfamily  \senderWeb } \\
-		 \\
-		 Steuernummer & \taxID \\
-		 \\
-		 Institut & \accountBankName \\
-		 IBAN & \accountIBAN \\
-		 BIC & \accountBIC
-	\end{tabular}	 			    
-   }%
+\setkomavar{firsthead}{
+	\footnotesize
+	\color[gray]{.3}%
+	\begin{tabularx}{\textwidth}{lXrl}
+		\multirow{5}{*}{\includegraphics[width=0.15\textwidth]{logo.png}} & & & \vspace{1cm}\\
+		& & Anschrift & \usekomavar{fromname}\\
+		& & & \senderStreet\\
+		& & & \senderZIP  \ \senderCity \\
+		\\
+		%& & Telefon & \senderTelephone \\
+		& & Mobil  & \usekomavar{frommobilephone} \\
+		& & E-Mail  & \usekomavar{fromemail} \\
+		& & Webseite & {\normalfont\ttfamily  \senderWeb } \\
+		\\
+		& & Steuernummer & \taxID \\
+		\\
+		& & Institut & \accountBankName \\
+		& & IBAN & \accountIBAN \\
+		& & BIC & \accountBIC
+	\end{tabularx}
 }
 
 
@@ -61,7 +60,6 @@
 	\begin{letter}{\customerCompany \\ \customerName \\ 
 	\customerStreet \\ \customerZIP \ \customerCity}
 	
-			\includegraphics[width=0.15\textwidth]{logo.png}			
 			\opening{\invoiceSalutation}
 			\invoiceText
 		    \begin{invoice}{Euro}{0}
